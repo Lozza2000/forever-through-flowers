@@ -747,7 +747,9 @@ if (form) {
       `Approximate budget: ${data.get('budget') || ''}`,
       '',
       `Details: ${data.get('message') || ''}`
-    ].join('\n');
+    ].join('\n');window.addEventListener('focus', () => {
+  window.location.href = 'inquiry-received.html';
+}, { once: true });
     window.location.href = 'sms:07564845938?body=' + encodeURIComponent(message);
   });
 }
