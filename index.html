@@ -680,7 +680,13 @@ textarea{
         <p class="section-label">ENQUIRE</p>
         <h2>Tell me about the tribute you have in mind</h2>
 
-        <form id="enquiryForm" class="enquiry-form">
+        <form id="enquiryForm" class="enquiry-form" action="https://formsubmit.co/foreverthroughflowers@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://foreverthroughflowers.co.uk/inquiry-received.html">
+
+<input type="hidden" name="_subject" value="New Forever Through Flowers enquiry">
+
+<input type="hidden" name="_captcha" value="false">
+        </form>
           <div class="form-grid">
             <label>Your name<input name="name" required></label>
             <label>Telephone<input name="phone" type="tel" required></label>
@@ -731,28 +737,6 @@ if (menuBtn && nav) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const form = document.getElementById('enquiryForm');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const message = [
-      'Hello Lauren, I would like to enquire about a floral tribute.',
-      '',
-      `Name: ${data.get('name') || ''}`,
-      `Telephone: ${data.get('phone') || ''}`,
-      `Funeral date: ${data.get('date') || ''}`,
-      `Type of tribute: ${data.get('tribute') || ''}`,
-      `Preferred colours: ${data.get('colours') || ''}`,
-      `Approximate budget: ${data.get('budget') || ''}`,
-      '',
-      `Details: ${data.get('message') || ''}`
-    ].join('\n');window.addEventListener('focus', () => {
-  window.location.href = 'inquiry-received.html';
-}, { once: true });
-    window.location.href = 'sms:07564845938?body=' + encodeURIComponent(message);
-  });
-}
 
 </script>
 </body>
